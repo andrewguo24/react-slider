@@ -1,0 +1,44 @@
+.button {
+  position: relative;
+  margin: auto;
+}
+
+.container {
+  position: absolute;
+  box-sizing: border-box;
+  top: 10%;
+  left: -200px;
+  width: 200px;
+  border: 1px solid grey;
+  height: 80%;
+  text-align: center;
+
+  &.is-animation-performed.closed {
+    animation: slideout 1s;
+  }
+
+  &.open {
+    left: 0;
+    animation: slidein 1s;
+  }
+}
+
+@keyframes slideout {
+  from {
+    left: 0;
+  }
+
+  to {
+    left: -200px;
+  }
+}
+
+@keyframes slidein {
+  from {
+    left: -200px;
+  }
+
+  to {
+    left: 0;
+  }
+}
