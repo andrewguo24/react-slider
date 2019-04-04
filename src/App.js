@@ -8,7 +8,7 @@ export default class App extends React.Component {
     isAnimationPerformed: false
   };
 
-  handleClick = () => {
+  handleClick = e => {
     this.setState(prevState => ({
       isSliderOpen: !prevState.isSliderOpen,
       isAnimationPerformed: true
@@ -19,7 +19,7 @@ export default class App extends React.Component {
     const { isSliderOpen, isAnimationPerformed } = this.state;
     return (
       <div>
-        <button className="button" onClick={() => this.handleClick()}>
+        <button className="button" onClick={this.handleClick}>
           {isSliderOpen ? "Close" : "Open"}
         </button>
         <div
